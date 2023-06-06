@@ -1,33 +1,50 @@
 body {
   background-color: #1a1a1a;
   color: green;
-  font-family: 'Courier New';
+  font-family: "Courier New";
   padding: 50px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 100px;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 600;
+}
 
+h2 {
+  font-size: 30px;
+  text-transform: lowercase;
+  font-weight: 550;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: lowercase;
+}
+p {
+  font-size: 18px;
 }
 
 a {
-    color:green;
-    text-decoration: none; 
+  color: green;
+  text-decoration: none;
 }
 
 a:hover {
-    color: limegreen;
+  color: limegreen;
 }
-
 
 a:active {
-    color: pink
+  color: pink;
 }
 
+/* lets connect links*/
+.connect {
+  list-style-type: none;
+}
 
 footer {
-    text-align: center;
-    padding-top: 50px;
-    
+  text-align: center;
+  padding-top: 50px;
+  font-size: 10px;
 }
