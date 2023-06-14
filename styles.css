@@ -17,6 +17,12 @@ h2 {
   text-transform: lowercase;
   font-weight: 550;
 }
+h2::before {
+    content: '<';
+}
+h2::after {
+    content: '>';
+}
 
 h4 {
   font-size: 20px;
@@ -42,6 +48,7 @@ a:active {
 /* lets connect links*/
 .connect {
   list-style-type: none;
+  font-weight: bold;
 }
 
 footer {
