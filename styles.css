@@ -2,7 +2,8 @@ body {
   background-color: #1a1a1a;
   color: green;
   font-family: "Courier New";
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 h1 {
@@ -15,6 +16,12 @@ h2 {
   font-size: 30px;
   text-transform: lowercase;
   font-weight: 550;
+}
+h2::before {
+    content: '<';
+}
+h2::after {
+    content: '>';
 }
 
 h4 {
@@ -31,20 +38,21 @@ a {
 }
 
 a:hover {
-  color: limegreen;
+  color: pink;
 }
 
 a:active {
-  color: pink;
+  color: limegreen;
 }
 
 /* lets connect links*/
 .connect {
   list-style-type: none;
+  font-weight: bold;
 }
 
 footer {
   text-align: center;
   padding-top: 50px;
-  font-size: 10px;
+  padding-bottom: 5px;
 }
