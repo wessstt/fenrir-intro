@@ -86,5 +86,4 @@ document.addEventListener("DOMContentLoaded", () => {
   footer.appendChild(copyright);
   copyright.style.fontSize = "10px";
 
-
 });
