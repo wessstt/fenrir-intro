@@ -45,12 +45,54 @@ a:active {
   color: limegreen;
 }
 
-/* lets connect links*/
+/*   /////CONNECT LINKS/////   */
 .connect {
   list-style-type: none;
   font-weight: bold;
 }
 
+/*   /////FORM STYLING/////   */
+input {
+  border: none;
+  border: 1px solid limegreen;
+  background-color: #303030;
+  width: 30%;
+  height: 25px;
+  margin: 13px;
+  padding-left: 10px;
+  border-radius: 5px;
+  color:rgb(166, 218, 167);
+}
+
+textarea {
+  background-color: #303030;
+  color:rgb(166, 218, 167);
+  padding: 10px;
+  width: 65%;
+  height: 30px;
+  margin: 13px;
+  border: 1px solid limegreen;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+button {
+  background-color: limegreen;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 14px;
+  margin-left: 25%;
+  color: #1a1a1a;
+}
+
+button:hover {
+  background-color: green;
+}
+
+/*   /////FOOTER/////   */
 footer {
   text-align: center;
   padding-top: 50px;
