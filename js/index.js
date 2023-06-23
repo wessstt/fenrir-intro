@@ -1,12 +1,7 @@
-///////////// script to make sure HTML loads before script //////////
-//////////// (script can be placed anywhre on the page) /////////////
+/* script to make sure HTML loads before script 
+  (script can be placed anywhre on the page)  */
 document.addEventListener("DOMContentLoaded", () => {
-  
-  
-  
-  ///////////////////////////////////
-  ///////////// SKILLS /////////////
-  /////////////////////////////////
+  /*  ///////////// SKILLS SECTION  /////////////  */
   const skills = [
     "HTML / CSS",
     "JavaScript",
@@ -29,42 +24,49 @@ document.addEventListener("DOMContentLoaded", () => {
     skillsList.appendChild(skill);
   }
 
-
-
-  /////////////////////////////////////////
-  ///////////// MESSAGE FORM /////////////
-  ///////////////////////////////////////
-
-  // HIDE MESSAGES WHEN NONE//
+  /*   ///////////// MESSAGE FORM SECTION /////////////   */
+  /*  Hide message header on load  */
   document.getElementById("messages").style.display = "none";
-
-  // FORM //
+  /* FORM */
   const messageForm = document.getElementsByName("leave_message")[0];
   messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // USER INFO //
-    const usersName = e.target.usersName.value;
-    const usersEmail = e.target.usersEmail.value;
-    const usersMessage = e.target.usersMessage.value;
-    const newMessage = document.createElement("li");
-    newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName} </a> wrote:<span> ${usersMessage}</span>`;
+    /* USER INFO */
+    const userValue = [
+      e.target.usersName.value,
+      e.target.usersEmail.value,
+      e.target.usersMessage.value,
+    ];
 
-    // MESSAGES //
-    const messageSection = document.getElementById("messages");
-    const messageList = messageSection.querySelector("ul");
-    // SHOW MSGS WHEN MSGS RECIEVED //
+    const userInfo = [
+      (usersName = userValue[0]),
+      (usersEmail = userValue[1]),
+      (usersMessage = userValue[2]),
+    ];
+
+    /*  DISPLAYS MESSAGES FROM USERS  */
+    const newMessage = document.createElement("li");
+    newMessage.innerHTML = `<a href="mailto:${userInfo[1]}">${userInfo[0]} </a> wrote:<span> ${userInfo[2]}</span>`;
     document.getElementById("messages").style.display = "";
 
-    // CREATE REMOVE BUTTON //
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
+
+    /* CREATE REMOVE BUTTON */
     const removeButton = document.createElement("button");
     removeButton.innerText = "remove";
     removeButton.type = "button";
 
-    // REMOVE BUTTON //
+    /* REMOVE BUTTON & HIDE MESSAGES WHEN NONE */
     removeButton.addEventListener("click", (e) => {
       const entry = e.target.parentNode;
       messageList.removeChild(entry);
+      if (messageList.length === true) {
+        messages.style.display = "";
+      } else {
+        messages.style.display = "none";
+      }
     });
 
     newMessage.appendChild(removeButton);
@@ -72,11 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     messageForm.reset();
   });
 
-
-
-  //////////////////////////////////////////////////////////
-  ///////////// FOOTER --- [COPYRIGHT & DATE] /////////////
-  ////////////////////////////////////////////////////////
+  /*  ///////////// FOOTER SECTION /////////////   */
   const today = new Date();
   const thisYear = today.getFullYear();
   const footer = document.querySelector("footer");
@@ -84,6 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   copyright.innerHTML = `🏳️‍⚧️ safe space 🏳️‍🌈 | &copy; Keri West_ ${thisYear}`;
   footer.appendChild(copyright);
-  copyright.style.fontSize = "10px";
-
+  copyright.style.fontSize = "12px";
+  copyright.style.wordSpacing = "2px";
 });
