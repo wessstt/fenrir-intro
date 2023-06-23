@@ -5,20 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Keri West" />
-    <meta name="description" content="Keri West's website is a digital portfolio to display his coding work and a little about himself."/>
+    <meta
+      name="description"
+      content="Keri West's website is a digital portfolio to display his coding work and a little about himself."
+    />
     <title>Keri West's Website</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
   <body>
     <div>
+      <nav id="menu">
+        <figure><img id="menu-icon" src="img/hamburger-icon.png" /></figure>
+        <a href="#about">about</a>
+        <a href="#connect">contact</a>
+        <a href="#socials">social_media</a>
+      </nav>
+
       <header>
         <h1>Keri West_</h1>
       </header>
 
-      <section>
+      <section id="about">
         <header>
-          <h2> about me </h2>
+          <h2>about me</h2>
         </header>
         <p>
           Hello, I’m Keri West, a solutions-driven web developer and manager
@@ -40,7 +50,7 @@
 
       <section>
         <header>
-          <h2> my experience </h2>
+          <h2>my experience</h2>
           <h4>Web Manager | humble + fume</h4>
         </header>
         <p>
@@ -64,34 +74,50 @@
         <ul></ul>
       </section>
 
-      <section>
+      <section id="connect">
         <header>
-          <h2> let's connect </h2>
+          <h2>let's connect</h2>
         </header>
 
         <nav>
           <ul class="connect">
-            <li><a href="mailto:keriwest88@gmail.com?subject=Mail from Website" target="_blank">Email</a></li>
-            <li><a href="https://github.com/wessstt" target="_blank">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/keri-west/" target="_blank">LinkedIn</a></li>
+            <li>
+              <a
+                href="mailto:keriwest88@gmail.com?subject=Mail from Website"
+                target="_blank"
+                >Email</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/wessstt" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/keri-west/" target="_blank"
+                >LinkedIn</a
+              >
+            </li>
           </ul>
         </nav>
       </section>
 
-      <section id="form">
-        <form name="leave_message">
-          <input type="text" name="usersName" required="true">
-          <input type="email" name="usersEmail" required="true">
-          <br>
-          <textarea name="usersMessage" required="true"></textarea>
-          <br>
+      <section id="form" class="position">
+        <form id="form" name="leave_message">
+          <label id="usersName" for="name">name</label>
+          <input id="name" type="text" name="usersName" required="true" />
+          <br />
+          <label id="usersEmail" for="email">email</label>
+          <input id="email" type="email" name="usersEmail" required="true" />
+
+          <label id="userMessage" for="message">message</label>
+          <textarea id="message" name="usersMessage" required="true"></textarea>
+          <br />
           <button type="submit">submit</button>
         </form>
       </section>
 
       <section id="messages">
-        <h2 id="msgHeader"> messages </h2>
-          <ul></ul>
+        <h2 id="msgHeader">messages</h2>
+        <ul></ul>
       </section>
 
       <footer></footer>
