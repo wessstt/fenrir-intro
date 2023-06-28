@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     skillsList.appendChild(skill);
   }
 
+  
   /*   ///////////// MESSAGE FORM SECTION /////////////   */
   /*  Hide message header on load  */
   document.getElementById("messages").style.display = "none";
@@ -85,3 +86,4 @@ document.addEventListener("DOMContentLoaded", () => {
   copyright.style.fontSize = "12px";
   copyright.style.wordSpacing = "2px";
 });
+

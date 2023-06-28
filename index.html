@@ -9,50 +9,49 @@
       name="description"
       content="Keri West's website is a digital portfolio to display his coding work and a little about himself."
     />
+
     <title>Keri West's Website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet
+    href="https://fonts.google.com/specimen/Belanosima?query=Belanosima"> <link
+    rel="stylesheet
+    href="https://fonts.google.com/specimen/Roboto+Mono?query=roboto+m">
   </head>
 
   <body>
-    <div>
-      <nav id="menu">
-        <figure><img id="menu-icon" src="img/hamburger-icon.png" /></figure>
-        <a href="#about">about</a>
-        <a href="#connect">contact</a>
-        <a href="#socials">social_media</a>
-      </nav>
-
-      <header>
-        <h1>Keri West_</h1>
-      </header>
+    <div id="navbar">
+        <a href="#about">About_me</a></li>
+        <a href="#experience">My_experience</a></li>
+        <a href="#form">Let's_connect</a></li>
+    </div>
 
       <section id="about">
-        <header>
-          <h2>about me</h2>
-        </header>
-        <p>
-          Hello, I’m Keri West, a solutions-driven web developer and manager
-          who’s highly collaborative and thrives in a communal and progressive
-          atmosphere. I have proven experience in consumer-focused website
-          building, development, HTML, CSS, JavaScript, SEO best practices, and
-          more.
-        </p>
-        <p>
-          Currently, I’m the Web Manager for Humble & Fume Inc., where I work
-          cross functionally to maintain the company’s multiple B2B sites.
-          During my time here, I’ve boosted our SEO position on Google search,
-          have maintained and uploaded thousands of products (which includes
-          image editing, descriptions, option sets, etc), written the Standard
-          Operating Procedure for maintaining brand standards across web, and
-          have managed hundreds of successful sales.
-        </p>
+        <h1>Hello, I'm Keri West</h1>
+        <div class="column">
+          <img id="portrait" src="img/Keri-portrait-orrganic.png" alt="Photo of Keri West"/>
+          <p>
+            A solutions-driven web developer and manager who’s highly
+            collaborative and thrives in a communal and progressive atmosphere. I
+            have proven experience in consumer-focused website building,
+            development, HTML, CSS, JavaScript, SEO best practices, and more.
+          </p>
+          <p>
+            Currently, I’m the Web Manager for Humble & Fume Inc., where I work
+            cross functionally to maintain the company’s multiple B2B sites.
+            During my time here, I’ve boosted our SEO position on Google search,
+            have maintained and uploaded thousands of products (which includes
+            image editing, descriptions, option sets, etc), written the Standard
+            Operating Procedure for maintaining brand standards across web, and
+            have managed hundreds of successful sales.
+          </p>
+        </div>
+        
+        
       </section>
 
-      <section>
-        <header>
-          <h2>my experience</h2>
-          <h4>Web Manager | humble + fume</h4>
-        </header>
+      <section id="experience">
+        <h2>My experience</h2>
         <p>
           I'm an experienced web product & content manager with a demonstrated
           history of working in B2B and B2C marketplaces. I have an extensive
@@ -60,7 +59,8 @@
           metadata, SEO, lifecycle management, implementing sales/promotions on
           websites, boosting in-store search, curating categories as well as
           photoshop photo editing skills.
-          <br />
+        </p>
+        <p>
           Over the past year I have moved more into learning and exploring the
           coding side of eCommerce websites, and am very interested in learning
           more about front end web and back end web development.
@@ -68,59 +68,57 @@
       </section>
 
       <section id="skills">
-        <header>
-          <h4>skills</h4>
-        </header>
+        <h4>Skills</h4>
         <ul></ul>
-      </section>
-
-      <section id="connect">
-        <header>
-          <h2>let's connect</h2>
-        </header>
-
-        <nav>
-          <ul class="connect">
-            <li>
-              <a
-                href="mailto:keriwest88@gmail.com?subject=Mail from Website"
-                target="_blank"
-                >Email</a
-              >
-            </li>
-            <li>
-              <a href="https://github.com/wessstt" target="_blank">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/keri-west/" target="_blank"
-                >LinkedIn</a
-              >
-            </li>
-          </ul>
-        </nav>
       </section>
 
       <section id="form" class="position">
         <form id="form" name="leave_message">
-          <label id="usersName" for="name">name</label>
-          <input id="name" type="text" name="usersName" required="true" />
+          <h2>Let's chat</h2>
+          <fieldset id="userInput">
+            <label id="usersName" for="name">Name</label>
+            <input id="name" type="text" name="usersName" required="true" />
+            <label id="usersEmail" for="email">Email</label>
+            <input id="email" type="email" name="usersEmail" required="true" />
+          </fieldset>
+          <fieldset id="userMessage">
+            <label id="userMessage" for="message">Message</label>
+            <textarea
+              id="message"
+              name="usersMessage"
+              required="true"
+            ></textarea>
+          </fieldset>
           <br />
-          <label id="usersEmail" for="email">email</label>
-          <input id="email" type="email" name="usersEmail" required="true" />
-
-          <label id="userMessage" for="message">message</label>
-          <textarea id="message" name="usersMessage" required="true"></textarea>
-          <br />
-          <button type="submit">submit</button>
+          <button type="submit">Submit</button>
         </form>
       </section>
 
       <section id="messages">
-        <h2 id="msgHeader">messages</h2>
+        <h2>Messages</h2>
         <ul></ul>
       </section>
 
-      <footer></footer>
+      <footer>
+        <section id="connect">
+          <nav id="connect">
+            <a
+              href="mailto:keriwest88@gmail.com?subject=Mail from Website"
+              target="_blank"
+            >
+              <img src="img/email-icon.png"
+            /></a>
+
+            <a href="https://github.com/wessstt" target="_blank">
+              <img src="img/github-icon.png"
+            /></a>
+
+            <a href="https://www.linkedin.com/in/keri-west/" target="_blank">
+              <img src="img/linkedin-icon.png"
+            /></a>
+          </nav>
+        </section>
+      </footer>
     </div>
     <script src="js/index.js"></script>
   </body>

@@ -1,0 +1,183 @@
+/*   NAVBAR STYLING  */
+#navbar {
+  display: block;
+  letter-spacing: 1.5px;
+  word-spacing: 5px;
+  margin-inline: 30px;
+  margin-block: 2em;
+  text-align: right;
+}
+
+/*  NAV LINK STYLING  */
+a {
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover, a:active {
+  color: #bedb45;
+}
+
+
+/*     MAIN    */
+body {
+  background-color: #13435b;
+  font-family: roboto mono;
+  padding: 0px;
+  margin: 0%;
+}
+
+h1, h2 {
+  font-family: belanosima;
+  font-weight: 600;
+}
+
+h2, h4, a {
+  color: #298c6f;
+}
+
+h1 {
+  color: #bedb45;
+  font-size: 72px;
+  margin-inline: 15%;
+}
+
+#about {
+  padding-bottom: 80px;
+}
+
+#portrait {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  float: right;
+  padding-right: 15px;
+}
+
+p {
+  color: #fdfbeb;
+  font-weight: 200px;
+  font-size: 16px;
+  margin-inline: 15%;
+  width: 50%;
+}
+
+
+/*  EXPERIENCE SECTIION STYLING  */
+#experience {
+  background-color: #052230;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 50px;
+  width: 50%;
+  margin-inline: 15%;
+}
+
+
+/*   SKILLS STYLING   */
+#skills {
+  background-color: #052230;
+  color: #fdfbeb;
+  padding-top: 10px;
+  padding-bottom: 80px;
+  padding-inline: 15%;
+}
+ul {
+  list-style-type: circle;
+}
+
+
+/*   MESSAGE FORM STYLING    */
+form {
+  border: none;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  color: #052230;
+}
+
+#form label {
+  display: grid;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-inline: 15%;
+}
+#form input, textarea {
+  border: 2px solid #052230;
+  border-radius: 10px;
+  background-color: #fdfbeb;
+  color: #052230;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-inline: 15%;
+}
+
+#form input {
+  width: 35%;
+  height: 50px;
+}
+
+#form textarea {
+  width: 50%;
+  height: 150px;
+  padding: 10px;
+}
+
+#form fieldset {
+  border-style: none;
+}
+
+button {
+  border: none;
+  border-radius: 15px;
+  background-color: #f97821;
+  color: #052230;
+  margin-top: 1em;
+  padding-block: 1em;
+  padding-inline: 2em;
+  font-size: 16px;
+  font-family: belanosima;
+  margin-inline: 15%;
+}
+
+button:hover {
+  background-color: #bedb45;
+}
+
+#messages ul {
+  margin-inline: 13%;
+  list-style-type: none;
+  color:#bedb45;
+  padding-bottom: 1.5em;
+}
+
+#messages a {
+  color: #f97821;
+  font-style: 16px;
+}
+#messages a:hover {
+  color:#298c6f;
+}
+
+
+/*    SOCIAL ICONS STYLING   */
+#connect img {
+  height: 25px;
+  width: 25px;
+  padding-bottom: 2em;
+  padding-inline: 2em;
+}
+
+/*   FOOTER STYLING    */
+footer {
+  background-color: #052230;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+
+}
