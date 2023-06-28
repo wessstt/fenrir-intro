@@ -81,9 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector("footer");
   const copyright = document.createElement("p");
 
-  copyright.innerHTML = `🏳️‍⚧️ safe space 🏳️‍🌈 | &copy; Keri West_ ${thisYear}`;
+  copyright.innerHTML = `🏳️‍⚧️ safe space 🏳️‍🌈 | &copy; Keri West ${thisYear}`;
   footer.appendChild(copyright);
+ 
+  /*  /// Styling ///   */
   copyright.style.fontSize = "12px";
   copyright.style.wordSpacing = "2px";
+  copyright.style.textAlign = "center";
+  copyright.style.color = "#298c6f";
+  copyright.style.marginInline = "25%";
+  copyright.style.fontWeight = "300";
+
 });
 
