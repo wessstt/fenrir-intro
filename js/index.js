@@ -1,20 +1,24 @@
 /* script to make sure HTML loads before script 
   (script can be placed anywhre on the page)  */
 document.addEventListener("DOMContentLoaded", () => {
+
   /*  ///////////// SKILLS SECTION  /////////////  */
   const skills = [
-    "HTML / CSS",
+    "HTML",
+    "CSS",
     "JavaScript",
     "Visual Studio Code",
     "GitHub",
     "Adobe Creative Cloud",
     "eCommerce Management",
-    "Content Management Systems (BigCommerce, Webflow, Wordpress)",
-    "SEO (Google Analytics, Google Search Console, semrush)",
+    "CMS (BigCommerce/ Webflow/ Wordpress)",
+    "SEO (semrush)",
+    "Google Analytics", 
+    "Google Search Console",
     "NetSuite",
     "Microsoft Office",
-    "Project Management Systems (Jira, Asana, Wrike)",
-    "Email Marketing (Klaviyo, Mailchimp)",
+    "Project Management (Jira/ Asana/ Wrike)",
+    "Email Marketing (Klaviyo/Mailchimp)",
   ];
   const skillsSection = document.getElementById("skills");
   skillsList = skillsSection.querySelector("ul");
@@ -23,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
   }
+  
 
   
   /*   ///////////// MESSAGE FORM SECTION /////////////   */
@@ -85,11 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
   footer.appendChild(copyright);
  
   /*  /// Styling ///   */
-  copyright.style.fontSize = "12px";
-  copyright.style.wordSpacing = "2px";
+  copyright.style.fontSize = "11px";
+  copyright.style.wordSpacing = "1px";
   copyright.style.textAlign = "center";
   copyright.style.color = "#298c6f";
-  copyright.style.marginInline = "25%";
   copyright.style.fontWeight = "300";
 
 });
