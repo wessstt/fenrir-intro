@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Roboto+Mono:wght@300;400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 :root {
   --primary-color: #13435b;
   --secondary-color: #052230;
@@ -7,30 +7,32 @@
   --teal: #298c6f;
   --lime: #bedb45;
   --orange: #f97821;
-}
-html {
-  scroll-behavior: smooth;
   background-color: var(--primary-color);
+  background-size: cover !important;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-*,
-::before,
-::after {
+* {
   padding: 0;
   margin: 0%;
 }
 
 body {
   font-family: "Roboto Mono", monospace;
+  width: 100%;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Belanosima", sans-serif;
   font-weight: 600;
 }
 
-h2, h3, a {
+h2,
+h3,
+a {
   color: var(--teal);
 }
 
@@ -39,167 +41,162 @@ p {
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.5;
-  margin: 2% 15%;
+  margin: 2% 15% 0;
   width: 70%;
-}
-@media only screen and (max-width: 768px) {
-  p {
-    font-size: .8rem;
-    margin: 5% 10%;
-    width: 80%;
-    font-size: 1rem;
-  }
 }
 
 h1 {
   color: var(--lime);
   font-size: 5.5rem;
   margin: 2% 0 0 15%;
-  line-height: 6rem;
+  line-height: 6.3rem;
   letter-spacing: 1.5px;
   width: 50%;
-}
-@media only screen and (max-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-  }
 }
 
 h2 {
   font-size: 3rem;
   letter-spacing: 1.5px;
-  width: 50%;
   margin: 2% 15%;
-}
-@media only screen and (max-width: 786px) {
-  h2 {
-    font-size: 2.5rem;
-    width: 80%;
-    margin: 1% 10%;
-  }
+  padding-top: 4rem;
 }
 
 h3 {
   font-size: 2rem;
   letter-spacing: 1.5px;
-}
-@media only screen and (max-width: 786px) {
-  h3 {
-    font-size: 1.5rem;
-  }
+  margin: 0 15%;
 }
 
-/*   NAVBAR STYLING  */
-.nav {
-  position: relative;
-  width: 100%;
-  text-align: center;
-}
-.nav-list {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-top: 1rem;
-}
-.nav-item {
-  list-style: none;
-  margin-right: 1rem;
-  text-decoration: none;
-}
-nav .icon {
-  width: 100px;
+/*  ========================== 
+    ****  NAVBAR STYLING  ****
+    ==========================  */
+.icon,
+.menu.icon {
+  position: fixed;
+  width: 150px;
   min-width: 80px;
+  margin-top: 1.5rem;
   margin-right: auto;
   margin-left: 1rem;
   list-style: none;
+  cursor: pointer;
 }
 
-nav a {
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1.5rem;
+  padding: 6px;
+  border: #bedb45 solid 2px;
+  background: transparent;
+  cursor: pointer;
+}
+.closeIcon {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #052230;
+  color: #298c6f;
+}
+.showMenu {
+  transform: translate(0);
+}
+.menuItem {
+  list-style: none;
+  margin-right: 6rem;
+  padding-top: 1.5rem;
   text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.material-icons {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 48, "opsz" 100;
+  color: #bedb45;
+}
+
+.material-icons span:hover {
+  color: #298c6f;
+}
+
+li a {
+  text-decoration: none;
+  list-style: none;
   margin: 1.6rem 0;
   font-size: 1rem;
+  font-size: x-large;
 }
 nav a:hover,
 nav a:active {
   color: var(--lime);
 }
 
-/*  ABOUT SECTION  */
+/*  =========================
+    ****  ABOUT SECTION  ****  
+    ========================= */
 .container {
   display: flex;
+  align-content:space-around;
   align-items: center;
   justify-content: center;
 }
-
 .container img {
   max-width: 50%;
-  max-height: 60vh;
-  align-items: center;
-  margin: 1% 10% 0 0;
-}
-@media only screen and (max-width: 786px) {
-  .conatiner img {
-    max-width: 50%;
-    max-height: 40vh;
-  }
+  max-height: 55vh;
+  align-items: center; 
+  padding-right: 5rem; 
 }
 .container h1 {
-  max-width: 100%;
-  align-items: center;
+  max-width: 50%;
 }
-
 #about {
-  padding-top: 25px;
-  padding-bottom: 100px;
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
 }
 
-/*  EXPERIENCE SECTIION STYLING  */
-#experience {
-  background-color: var(--secondary-color);
-  padding-top: 50px;
-  padding-bottom: 10px;
-  width: 100%;
-}
-
-/*   SKILLS STYLING   */
-#skills {
+/*  ======================================
+    ****  EXPERIENCE SECTIION STYLING ****
+    ======================================  */
+.experience {
   background-color: var(--secondary-color);
   color: var(--off-white);
-  padding-block: 10px 80px;
-  padding-inline: 15%;
-  font-size: 1rem;
+  padding: 2% 0;
 }
+/*  ========================== 
+    ****  SKILLS STYLING  ****
+    ==========================  */
 .skills {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 50px;
+  display: block;
   list-style-type: none;
-  width: 100%;
   text-align: left;
+  text-indent: 15%;
+  padding-bottom: 2%;
 }
-@media only screen and (max-width:1080px) {
-  .skills {
-    display: inline;
-    font-size: 15px;
-    white-space: nowrap;
-  }
-}
-
 .skills li::before {
-  content: "◦"; 
+  content: "◦";
   color: var(--orange);
-  padding: 25px;
+  margin: 0 2%;
 }
 
-/*   MESSAGE FORM STYLING    */
+/*  ================================ 
+    ****  MESSAGE FORM STYLING  ****
+    ================================  */
 form {
   border: none;
   margin-top: 80px;
   margin-bottom: 50px;
   color: var(--secondary-color);
 }
-
 #form label {
   color: var(--lime);
   font-weight: 300;
@@ -220,30 +217,19 @@ textarea {
   padding-left: 10px;
   margin-inline: 15%;
 }
-
 #form input {
   width: 35%;
   height: 50px;
 }
-
 #form textarea {
   width: 50%;
   height: 150px;
   padding: 10px;
 }
-@media only screen and (max-width: 786px) {
-  #form input,
-  #form textarea {
-  width: 70%;
-  align-items: center;
-  }
-}
-
 #form fieldset {
   border-style: none;
 }
-
-button {
+#form button {
   border: none;
   border-radius: 15px;
   background-color: var(--orange);
@@ -253,55 +239,121 @@ button {
   font-family: "Belanosima", sans-serif;
   margin: 1% 15%;
 }
-@media only screen and (max-width: 786px) {
-  button {
-    align-content: center;
-    justify-content: center;
-    width: 70%;
-    margin: 5% 15%;
-  }
-}
-
 button:hover {
   background-color: var(--lime);
 }
-
 #messages ul {
   margin-inline: 13%;
   list-style-type: none;
   color: var(--lime);
   padding-bottom: 1.5em;
 }
-
 #messages a {
   color: var(--orange);
   font-size: 16px;
   text-decoration: none;
   margin-left: 5%;
 }
-@media only screen and (max-width: 786px) {
-  #messages a {
-    width: 80%;
-  }
-
-}
 #messages a:hover {
   color: var(--teal);
 }
 
-/*   FOOTER STYLING    */
+/*  ========================== 
+    ****  FOOTER STYLING  ****  
+    ==========================  */
 footer {
   background-color: var(--secondary-color);
   text-align: center;
   padding-top: 2.5em;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
-/*    SOCIAL ICONS STYLING   */
+/*  ================================
+    ****  SOCIAL ICONS STYLING  ****
+    ================================  */
 #connect img {
   display: inline-block;
   height: 26px;
   width: 26px;
   padding-bottom: 1em;
   padding-inline: 2em;
+}
+
+/*  ================================================== 
+    ****************  MEDIA QUERIES   ****************
+    ==================================================   */
+    /* When the width is between 300px and 900px - change the appearance */
+@media screen and (max-width: 980px) and (min-width: 460px) {
+  .menuItem {
+    margin-right: 3rem;
+    margin-left: 3rem;
+    padding-top: 1rem;
+    text-decoration: none;
+    display:flex;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    padding-left: 10%;
+  }
+  .conatiner img {
+    max-width: 40%;
+    max-height: 40vh;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin: 1% 10%;
+  }
+  #experience {
+    padding: 1rem 0;
+  }
+  .experience {
+   padding-bottom: 5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .skills {
+    display: inline;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-top: 2rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin: 5% 10%;
+    width: 80%;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+
+  }
+
+  #form input,
+  #form textarea {
+    width: 70%;
+    align-items: center;
+  }
+
+  #form button {
+    align-content: center;
+    justify-content: center;
+    width: 73%;
+    margin: 5% 15%;
+  }
+  #messages a {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .icon,
+  .menu.icon {
+    position: relative;
+  }
 }
