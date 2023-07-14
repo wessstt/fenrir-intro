@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Keri West" />
-    <meta name="description" content="Keri West's website is a digital portfolio to display his coding work and a little about himself."/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Keri West">
+    <meta name="description" content="Keri West's website is a digital portfolio to display his coding work and a little about himself.">
 
     <title>Keri West's Website</title>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   </head>
 
-  <body>
-    <div id="navbar">
-        <a href="#about">About_me</a></li>
-        <a href="#experience">My_experience</a></li>
-        <a href="#form">Let's_connect</a></li>
-    </div>
+  <body id="top">
+    <div>
+      <nav>
+        <li class="icon"><a href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a></li>
+        <ul class="menu">
+          <li class="icon"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></li>
+          <li><a class="menuItem" href="#about">About_me</a></li>
+          <li><a class="menuItem" href="#experience">My_experience</a></li>
+          <li><a class="menuItem" href="#form">Let's_connect</a></li>
+        </ul>
+        <button class="hamburger">
+          <!-- material icons https://material.io/resources/icons/ -->
+          <i class="menuIcon material-icons"><span class="material-symbols-outlined">
+            menu
+            </span></i>
+          <i class="closeIcon material-icons"><span class="material-symbols-outlined">
+            close
+            </span></i>
+        </button>  
+      
+
+      </nav>
 
       <section id="about">
-        <img id="portrait" src="img/Keri-portrait-orrganic.png" alt="Photo of Keri West">
-        <h1>Hello, <br>I'm Keri West.</h1>
-          <p>
-            A solutions-driven web developer and manager who’s highly
-            collaborative and thrives in a communal and progressive atmosphere. I
-            have proven experience in consumer-focused website building,
-            development, HTML, CSS, JavaScript, SEO best practices, and more.
-          </p>
-          <p>
-            Currently, I’m the Web Manager for Humble & Fume Inc., where I work
-            cross functionally to maintain the company’s multiple B2B sites.
-            During my time here, I’ve boosted our SEO position on Google search,
-            have maintained and uploaded thousands of products (which includes
-            image editing, descriptions, option sets, etc), written the Standard
-            Operating Procedure for maintaining brand standards across web, and
-            have managed hundreds of successful sales.
-          </p>
+        <div class="container">
+          <h1>Howdy, <br>I'm Keri West.</h1>
+          <img src="img/Keri-portrait-orrganic.png" alt="Photo of Keri West">
+        </div>
+        <p>
+          A solutions-driven web developer and manager who’s highly
+          collaborative and thrives in a communal and progressive atmosphere. I
+          have proven experience in consumer-focused website building,
+          development, HTML, CSS, JavaScript, SEO best practices, and more.
+        </p>
+        <p>
+          Currently, I’m the Web Manager for Humble & Fume Inc., where I work
+          cross functionally to maintain the company’s multiple B2B sites.
+          During my time here, I’ve boosted our SEO position on Google search,
+          have maintained and uploaded thousands of products (which includes
+          image editing, descriptions, option sets, etc), written the Standard
+          Operating Procedure for maintaining brand standards across web, and
+          have managed hundreds of successful sales.
+        </p>
+        
       </section>
 
-      <section id="experience">
+      <section id="experience" class="experience">
         <h2>My experience</h2>
         <p>
           I'm an experienced web product & content manager with a demonstrated
@@ -57,29 +77,25 @@
         </p>
       </section>
 
-      <section id="skills">
-        <h4>Skills</h4>
-        <ul></ul>
+      <section id="skills" class="experience">
+        <h3>Skills</h3>
+        <ul class="skills"></ul>
       </section>
 
       <section id="form" class="position">
-        <form id="form" name="leave_message">
+        <form class="form" name="leave_message">
           <h2>Let's chat</h2>
           <fieldset id="userInput">
             <label id="usersName" for="name">Name</label>
-            <input id="name" type="text" name="usersName" required="true" />
+            <input id="name" type="text" name="usersName" required>
             <label id="usersEmail" for="email">Email</label>
-            <input id="email" type="email" name="usersEmail" required="true" />
+            <input id="email" type="email" name="usersEmail" required>
           </fieldset>
           <fieldset id="userMessage">
-            <label id="userMessage" for="message">Message</label>
-            <textarea
-              id="message"
-              name="usersMessage"
-              required="true"
-            ></textarea>
+            <label class="userMessage" for="message">Message</label>
+            <textarea class="message" name="usersMessage" required></textarea>
           </fieldset>
-          <br />
+          <br>
           <button type="submit">Submit</button>
         </form>
       </section>
@@ -91,14 +107,14 @@
 
       <footer>
         <section id="connect">
-            <a href="mailto:keriwest88@gmail.com?subject=Mail from Website" target="_blank">
-              <img src="img/email-icon.png"></a>
+          <a href="mailto:keriwest88@gmail.com?subject=MailfromWebsite" target="_blank">
+            <img src="img/icons/email-icon.svg" alt="email icon"></a>
 
-            <a href="https://github.com/wessstt" target="_blank">
-              <img src="img/github-icon.png"></a>
+          <a href="https://github.com/wessstt" target="_blank">
+            <img src="img/icons/github-icon.svg" alt="github icon"></a>
 
-            <a href="https://www.linkedin.com/in/keri-west/" target="_blank">
-              <img src="img/linkedin-icon.png"></a>
+          <a href="https://www.linkedin.com/in/keri-west/" target="_blank">
+            <img src="img/icons/linkedin-icon.svg" alt="linkedin icon"></a>
         </section>
       </footer>
     </div>
