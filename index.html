@@ -16,31 +16,31 @@
 
   <body id="top">
     <div>
-      <nav>
-        <li class="icon"><a href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a></li>
-        <ul class="menu">
-          <li class="icon"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></li>
-          <li><a class="menuItem" href="#about">About_me</a></li>
-          <li><a class="menuItem" href="#experience">My_experience</a></li>
-          <li><a class="menuItem" href="#form">Let's_connect</a></li>
-        </ul>
-        <button class="hamburger">
-          <!-- material icons https://material.io/resources/icons/ -->
-          <i class="menuIcon material-icons"><span class="material-symbols-outlined">
-            menu
-            </span></i>
-          <i class="closeIcon material-icons"><span class="material-symbols-outlined">
-            close
-            </span></i>
-        </button>  
       
-
+      <nav>
+        <a class="nav-icon" href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a>
+        <ul class="nav-menu">
+          <a class="nav-item nav-icon" href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About me</a></li> 
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">My experience</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">My projects</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#form">Let's connect</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
 
       <section id="about">
         <div class="container">
           <h1>Howdy, <br>I'm Keri West.</h1>
-          <img src="img/Keri-portrait-orrganic.png" alt="Photo of Keri West">
+          <img id="img" src="img/Keri-portrait-orrganic.png" alt="Photo of Keri West">
         </div>
         <p>
           A solutions-driven web developer and manager who’s highly
@@ -57,7 +57,6 @@
           Operating Procedure for maintaining brand standards across web, and
           have managed hundreds of successful sales.
         </p>
-        
       </section>
 
       <section id="experience" class="experience">
@@ -81,6 +80,13 @@
         <h3>Skills</h3>
         <ul class="skills"></ul>
       </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul></ul>
+      </section>
+
+
 
       <section id="form" class="position">
         <form class="form" name="leave_message">

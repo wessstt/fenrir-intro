@@ -15,7 +15,8 @@
 
 * {
   padding: 0;
-  margin: 0%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -41,7 +42,7 @@ p {
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.5;
-  margin: 2% 15% 0;
+  margin: 2% 15%;
   width: 70%;
 }
 
@@ -70,92 +71,100 @@ h3 {
 /*  ========================== 
     ****  NAVBAR STYLING  ****
     ==========================  */
-.icon,
-.menu.icon {
-  position: fixed;
-  width: 150px;
-  min-width: 80px;
-  margin-top: 1.5rem;
-  margin-right: auto;
-  margin-left: 1rem;
+.nav-item {
   list-style: none;
-  cursor: pointer;
+  margin: 0 2rem 2rem 0;
+  text-align: left;
 }
-
-.hamburger {
-  position: fixed;
-  z-index: 100;
-  top: 1rem;
-  right: 1.5rem;
-  padding: 6px;
-  border: #bedb45 solid 2px;
-  background: transparent;
-  cursor: pointer;
-}
-.closeIcon {
-  display: none;
-}
-
-.menu {
-  position: fixed;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background: #052230;
-  color: #298c6f;
-}
-.showMenu {
-  transform: translate(0);
-}
-.menuItem {
-  list-style: none;
-  margin-right: 6rem;
-  padding-top: 1.5rem;
+a.nav-link {
+  color: var(--off-white);
+  display: block;
   text-decoration: none;
+  margin: 2.5rem 0;
+  padding-left: 70%;
+  font-size: large;
+}
+.nav-menu {
   display: flex;
-  justify-content: flex-end;
+  position: fixed;
+  height: 100%;
+  right: -100%;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  opacity: 95%;
+  width: 50%;
+  text-align: right;
+  transition: 0.3s;
+  white-space: nowrap;
+  z-index: 1;
 }
-
-.material-icons {
-  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 48, "opsz" 100;
-  color: #bedb45;
+.nav-menu.active {
+  right: 0;
+  padding: 2rem;
 }
-
-.material-icons span:hover {
-  color: #298c6f;
+.nav-icon {
+  position: absolute;
+  cursor: pointer;
+  width: 150px;
+  min-width: 50px;
+  margin: 2rem;
 }
-
-li a {
-  text-decoration: none;
-  list-style: none;
-  margin: 1.6rem 0;
-  font-size: 1rem;
-  font-size: x-large;
+.nav-link {
+  transition: 0.7s ease;
 }
-nav a:hover,
-nav a:active {
+.nav-link:hover,
+.nav-link:active {
   color: var(--lime);
 }
-
+.hamburger {
+  display: block;
+  cursor: pointer;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 8px;
+  border: #bedb45 solid 2px;
+  border-radius: 10px;
+  z-index: 2;
+}
+/*hamburger animation*/
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: #bedb45;
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 /*  =========================
     ****  ABOUT SECTION  ****  
     ========================= */
 .container {
   display: flex;
-  align-content:space-around;
+  flex-direction: row;
+  align-content:normal;
   align-items: center;
   justify-content: center;
 }
 .container img {
   max-width: 50%;
   max-height: 55vh;
-  align-items: center; 
-  padding-right: 5rem; 
+  margin-right: 15%;
 }
+/*
+.box-shadow {
+  filter: drop-shadow(10px 10px 4px #0c374d);
+}*/
 .container h1 {
   max-width: 50%;
 }
@@ -164,13 +173,15 @@ nav a:active {
   padding-bottom: 5rem;
 }
 
+
 /*  ======================================
     ****  EXPERIENCE SECTIION STYLING ****
     ======================================  */
 .experience {
   background-color: var(--secondary-color);
   color: var(--off-white);
-  padding: 2% 0;
+  padding: .25rem 0;
+  width: 100%;
 }
 /*  ========================== 
     ****  SKILLS STYLING  ****
@@ -180,7 +191,7 @@ nav a:active {
   list-style-type: none;
   text-align: left;
   text-indent: 15%;
-  padding-bottom: 2%;
+  padding-bottom: 5rem;
 }
 .skills li::before {
   content: "◦";
@@ -188,13 +199,29 @@ nav a:active {
   margin: 0 2%;
 }
 
+/*  ============================ 
+    ****  PROJECTS STYLING  ****
+    ============================  */
+#projects {
+  background-color: var(--teal);
+  padding-block: 2%;
+  margin-bottom: 2rem;
+}
+#projects h2 {
+  color: var(--secondary-color);
+  padding-top: 0;
+}
+#projects li {
+  margin: 2% 17%;
+  list-style: none;
+}
+
 /*  ================================ 
     ****  MESSAGE FORM STYLING  ****
     ================================  */
 form {
   border: none;
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 50px;
   color: var(--secondary-color);
 }
 #form label {
@@ -224,23 +251,10 @@ textarea {
 #form textarea {
   width: 50%;
   height: 150px;
-  padding: 10px;
+  padding-top: 10px;
 }
 #form fieldset {
   border-style: none;
-}
-#form button {
-  border: none;
-  border-radius: 15px;
-  background-color: var(--orange);
-  color: var(--secondary-color);
-  padding: 1em 2.5em 1em 2.5em;
-  font-size: 16px;
-  font-family: "Belanosima", sans-serif;
-  margin: 1% 15%;
-}
-button:hover {
-  background-color: var(--lime);
 }
 #messages ul {
   margin-inline: 13%;
@@ -258,6 +272,40 @@ button:hover {
   color: var(--teal);
 }
 
+/*  =====================
+    *** BUTTON STYLES ***
+    ===================== */
+#form button,
+#messages button,
+#projects button {
+  border: none;
+  border-radius: 15px;
+  color: var(--secondary-color);
+  padding: 1em 0;
+  font-size: 16px;
+  font-family: "Belanosima", sans-serif;
+  margin: 1% 15%;
+  width: 15%;
+}
+#form button,
+#messages button {
+  background-color: var(--orange);
+}
+#projects button {
+  background-color: var(--lime);
+  width: 50%;
+  height: 4rem;
+}
+
+#form button:hover,
+#messages button:hover {
+  background-color: var(--lime);
+}
+
+#projects button:hover {
+  background-color: var(--secondary-color);
+  color: var(--off-white);
+}
 /*  ========================== 
     ****  FOOTER STYLING  ****  
     ==========================  */
@@ -266,6 +314,7 @@ footer {
   text-align: center;
   padding-top: 2.5em;
   padding-bottom: 0.5em;
+  width: 100%;
 }
 
 /*  ================================
@@ -273,65 +322,58 @@ footer {
     ================================  */
 #connect img {
   display: inline-block;
-  height: 26px;
-  width: 26px;
+  height: 40px;
+  width: 40px;
   padding-bottom: 1em;
-  padding-inline: 2em;
+  margin: 0 1.5em;
 }
 
 /*  ================================================== 
     ****************  MEDIA QUERIES   ****************
     ==================================================   */
-    /* When the width is between 300px and 900px - change the appearance */
-@media screen and (max-width: 980px) and (min-width: 460px) {
-  .menuItem {
-    margin-right: 3rem;
-    margin-left: 3rem;
-    padding-top: 1rem;
-    text-decoration: none;
-    display:flex;
-    justify-content: center;
-  }
-
+/* When the width is between 300px and 900px - change the appearance */
+@media(max-width: 980px) and (min-width: 460px) {
   h1 {
     font-size: 3.5rem;
     line-height: 4rem;
-    padding-left: 10%;
+    margin-left: 8rem;
+    margin-top: 2rem;
   }
-  .conatiner img {
-    max-width: 40%;
-    max-height: 40vh;
-  }
-  
+ 
   h2 {
     font-size: 2.5rem;
     margin: 1% 10%;
   }
   #experience {
-    padding: 1rem 0;
+    padding: .5rem 0;
   }
   .experience {
-   padding-bottom: 5rem;
+    padding-bottom: 5rem;
   }
 
   h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+
   .skills {
-    display: inline;
     font-size: 15px;
     white-space: nowrap;
     margin-top: 2rem;
   }
 
+  #projects button {
+    width: 100%;
+    height: 3.5rem;
+    margin: 1% 3%;
+  }
+
   p {
     font-size: 0.8rem;
     margin: 5% 10%;
-    width: 80%;
+    width: 75%;
     font-size: 1rem;
-    padding-bottom: 1rem;
-
+    padding-bottom: .5rem;
   }
 
   #form input,
@@ -339,11 +381,11 @@ footer {
     width: 70%;
     align-items: center;
   }
-
-  #form button {
+  #form button,
+  #messages button {
     align-content: center;
     justify-content: center;
-    width: 73%;
+    width: 70%;
     margin: 5% 15%;
   }
   #messages a {
@@ -351,9 +393,13 @@ footer {
   }
 }
 
-@media only screen and (max-width: 980px) {
-  .icon,
-  .menu.icon {
-    position: relative;
+@media(max-width: 980px) and (max-width: 768px)  {
+  .nav.icon {
+    display: block;
+  }
+  .nav-menu {
+    width: 100%;
+    align-items: right;
+    opacity: 100%;
   }
 }
