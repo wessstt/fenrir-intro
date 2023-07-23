@@ -46,11 +46,20 @@ p {
   width: 70%;
 }
 
+.line {
+  background-color: var(--orange);
+  height: 10px;
+  width: 5rem;
+  margin: 0 15%;
+  border: none;
+  border-radius: 15px;
+}
+
 h1 {
   color: var(--lime);
-  font-size: 5.5rem;
+  font-size: 5.25rem;
   margin: 2% 0 0 15%;
-  line-height: 6.3rem;
+  line-height: 6rem;
   letter-spacing: 1.5px;
   width: 50%;
 }
@@ -72,20 +81,20 @@ h3 {
     ****  NAVBAR STYLING  ****
     ==========================  */
 .nav-item {
+  display: flex;
+  justify-content: flex-end;
+  border: transparent solid 1px;
   list-style: none;
-  margin: 0 2rem 2rem 0;
-  text-align: left;
+  margin: 3.5rem;
 }
 a.nav-link {
   color: var(--off-white);
-  display: block;
+  display: flex;
   text-decoration: none;
-  margin: 2.5rem 0;
-  padding-left: 70%;
-  font-size: large;
+  font-size: x-large;
+  padding: .5rem ;
 }
 .nav-menu {
-  display: flex;
   position: fixed;
   height: 100%;
   right: -100%;
@@ -93,27 +102,31 @@ a.nav-link {
   background-color: var(--secondary-color);
   opacity: 95%;
   width: 50%;
-  text-align: right;
   transition: 0.3s;
   white-space: nowrap;
-  z-index: 1;
+  z-index: 98;
 }
 .nav-menu.active {
   right: 0;
   padding: 2rem;
 }
 .nav-icon {
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   width: 150px;
   min-width: 50px;
   margin: 2rem;
 }
+.nav-item-nav-icon {
+  display: none;
+}
 .nav-link {
   transition: 0.7s ease;
 }
-.nav-link:hover,
-.nav-link:active {
+
+.nav-item:hover,
+a.nav-link:hover,
+a.nav-link:active {
   color: var(--lime);
 }
 .hamburger {
@@ -125,7 +138,7 @@ a.nav-link {
   padding: 8px;
   border: #bedb45 solid 2px;
   border-radius: 10px;
-  z-index: 2;
+  z-index: 99;
 }
 /*hamburger animation*/
 .bar {
@@ -152,7 +165,7 @@ a.nav-link {
 .container {
   display: flex;
   flex-direction: row;
-  align-content:normal;
+  align-content: normal;
   align-items: center;
   justify-content: center;
 }
@@ -160,11 +173,8 @@ a.nav-link {
   max-width: 50%;
   max-height: 55vh;
   margin-right: 15%;
+  filter: drop-shadow(12px 12px 10px #072b3d);
 }
-/*
-.box-shadow {
-  filter: drop-shadow(10px 10px 4px #0c374d);
-}*/
 .container h1 {
   max-width: 50%;
 }
@@ -173,24 +183,24 @@ a.nav-link {
   padding-bottom: 5rem;
 }
 
-
 /*  ======================================
     ****  EXPERIENCE SECTIION STYLING ****
     ======================================  */
 .experience {
   background-color: var(--secondary-color);
   color: var(--off-white);
-  padding: .25rem 0;
+  padding: 0.25rem 0;
   width: 100%;
 }
 /*  ========================== 
     ****  SKILLS STYLING  ****
     ==========================  */
 .skills {
-  display: block;
+  display: grid;
+  grid-template-columns: 40% 40%;
   list-style-type: none;
   text-align: left;
-  text-indent: 15%;
+  margin-left: 15%;
   padding-bottom: 5rem;
 }
 .skills li::before {
@@ -204,16 +214,38 @@ a.nav-link {
     ============================  */
 #projects {
   background-color: var(--teal);
-  padding-block: 2%;
-  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 7rem;
 }
 #projects h2 {
   color: var(--secondary-color);
   padding-top: 0;
 }
+#projects ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-flow: wrap;
+  margin-inline: 15%;
+}
 #projects li {
-  margin: 2% 17%;
+  margin-top: 3em;
   list-style: none;
+}
+#projects a {
+  background-color: var(--lime);
+  color: var(--secondary-color);
+  border-radius: 15px;
+  font-family: "Belanosima", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  width: 70%;
+  padding: 20px 30px;
+}
+#projects a:hover {
+  background-color: var(--secondary-color);
+  color: var(--off-white);
 }
 
 /*  ================================ 
@@ -256,17 +288,35 @@ textarea {
 #form fieldset {
   border-style: none;
 }
+
+#messages {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 #messages ul {
   margin-inline: 13%;
   list-style-type: none;
   color: var(--lime);
   padding-bottom: 1.5em;
 }
+#messages li {
+  border-bottom: var(--secondary-color) solid 1.5px;
+  padding-bottom: 6rem;
+  padding-top: 2rem;
+}
 #messages a {
+  display: block;
+  justify-content:space-between;
   color: var(--orange);
   font-size: 16px;
   text-decoration: none;
   margin-left: 5%;
+}
+#messages span {
+  display: block;
+  margin-left: 8%;
+  width: 60%;
 }
 #messages a:hover {
   color: var(--teal);
@@ -275,36 +325,24 @@ textarea {
 /*  =====================
     *** BUTTON STYLES ***
     ===================== */
-#form button,
-#messages button,
-#projects button {
+button {
+  font-family: "Belanosima", sans-serif;
+  font-size: 16px;
+  color: var(--secondary-color);
+  background-color: var(--orange);
   border: none;
   border-radius: 15px;
-  color: var(--secondary-color);
   padding: 1em 0;
-  font-size: 16px;
-  font-family: "Belanosima", sans-serif;
-  margin: 1% 15%;
+  margin: 1% 15% 2%;
   width: 15%;
 }
-#form button,
 #messages button {
-  background-color: var(--orange);
+  display: block;
+  float: right;
 }
-#projects button {
+button:hover,
+button:hover {
   background-color: var(--lime);
-  width: 50%;
-  height: 4rem;
-}
-
-#form button:hover,
-#messages button:hover {
-  background-color: var(--lime);
-}
-
-#projects button:hover {
-  background-color: var(--secondary-color);
-  color: var(--off-white);
 }
 /*  ========================== 
     ****  FOOTER STYLING  ****  
@@ -332,20 +370,30 @@ footer {
     ****************  MEDIA QUERIES   ****************
     ==================================================   */
 /* When the width is between 300px and 900px - change the appearance */
-@media(max-width: 980px) and (min-width: 460px) {
+@media (max-width: 980px) and (min-width: 460px) {
   h1 {
     font-size: 3.5rem;
     line-height: 4rem;
     margin-left: 8rem;
     margin-top: 2rem;
   }
- 
+  .container img {
+    padding-right: 3rem;
+  }
+  .line {
+    background-color: var(--orange);
+    height: 8px;
+    width: 5rem;
+    margin: 6% 10%;
+    border: none;
+    border-radius: 15px;
+  }
   h2 {
     font-size: 2.5rem;
     margin: 1% 10%;
   }
   #experience {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
   .experience {
     padding-bottom: 5rem;
@@ -355,17 +403,12 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
-
-  .skills {
-    font-size: 15px;
+  
+  #projects a {
+    display: grid;
+    justify-content: space-evenly;
     white-space: nowrap;
-    margin-top: 2rem;
-  }
-
-  #projects button {
-    width: 100%;
-    height: 3.5rem;
-    margin: 1% 3%;
+    width:fit-content;
   }
 
   p {
@@ -373,7 +416,7 @@ footer {
     margin: 5% 10%;
     width: 75%;
     font-size: 1rem;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 
   #form input,
@@ -381,25 +424,46 @@ footer {
     width: 70%;
     align-items: center;
   }
-  #form button,
-  #messages button {
+  button {
     align-content: center;
-    justify-content: center;
     width: 70%;
     margin: 5% 15%;
   }
-  #messages a {
+  #messages h2 {
+    padding-top: 1.5rem;
+  }
+  #messages span {
     width: 80%;
+  }
+  a.nav-link {
+    padding-left: 55%;
   }
 }
 
-@media(max-width: 980px) and (max-width: 768px)  {
-  .nav.icon {
-    display: block;
-  }
+@media (max-width: 980px) and (max-width: 768px) {
   .nav-menu {
     width: 100%;
-    align-items: right;
     opacity: 100%;
+  }
+  .nav-item-nav-icon {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 150px;
+    min-width: 50px;
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 1220px) {
+  .nav-icon {
+    display: block;
+    position: absolute;
+  }
+  .skills {
+    display: block;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-top: 2rem;
   }
 }

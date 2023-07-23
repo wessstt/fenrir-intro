@@ -1,7 +1,6 @@
 /* script to make sure HTML loads before script 
   (script can be placed anywhre on the page)  */
 document.addEventListener("DOMContentLoaded", () => {
-  
   /*
      =======================================  
      ***********    NAV BAR    *************
@@ -15,22 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.toggle("active");
   });
 
-  document.querySelectorAll(".nav-item").forEach((n) =>
-    n.addEventListener("click", () => {
+  document.querySelectorAll(".nav-item").forEach((nav) =>
+    nav.addEventListener("click", () => {
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
     })
   );
-
-  /*
-     ========================================== 
-     ************ ABOUT SECTION  *************
-     ==========================================
-   */
-    const dropShadow = document.getElementById("img");
-    dropShadow.style.setProperty("-webkit-filter", "drop-shadow(12px 12px 10px #072b3d)");
-    
-   
 
   /*
      ========================================== 
@@ -78,12 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (let i = 0; i < repositories.length; i++) {
         const project = document.createElement("li");
-        // change list to buttons that link to github
-        const repoLinks = document.createElement("button");
-        repoLinks.href = repositories[i].html_url;
-        repoLinks.textContent = repositories[i].name;
+        const repoLink = document.createElement("a");
+        repoLink.href = repositories[i].html_url;
+        repoLink.textContent = repositories[i].name;
 
-        project.appendChild(repoLinks);
+        project.appendChild(repoLink);
         projectList.appendChild(project);
       }
     }
@@ -118,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*  DISPLAYS MESSAGES FROM USERS  */
     const newMessage = document.createElement("li");
-    newMessage.innerHTML = `<a href="mailto:${userInfo[1]}">${userInfo[0]} </a> wrote:<span> ${userInfo[2]}</span>`;
+    newMessage.innerHTML = `<a href="mailto:${userInfo[1]}">${userInfo[0]} wrote:</a> <span> ${userInfo[2]}</span>`;
     document.getElementById("messages").style.display = "";
 
     const messageSection = document.getElementById("messages");
@@ -133,18 +121,17 @@ document.addEventListener("DOMContentLoaded", () => {
     removeButton.addEventListener("click", (e) => {
       const entry = e.target.parentNode;
       messageList.removeChild(entry);
-      if (messageList.length === true) {
-        messages.style.display = "block";
-      } else {
-        messages.style.display = "none";
-      }
+        if (messageList.children.length) {
+          messages.style.display = "block";
+        } else {
+          messages.style.display = "none";
+        }
     });
-
-    newMessage.appendChild(removeButton);
+    
     messageList.appendChild(newMessage);
+    newMessage.appendChild(removeButton);
     messageForm.reset();
   });
-
   /*
      =========================================  
      ************ FOOTER SECTION *************

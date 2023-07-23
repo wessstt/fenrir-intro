@@ -20,7 +20,7 @@
       <nav>
         <a class="nav-icon" href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a>
         <ul class="nav-menu">
-          <a class="nav-item nav-icon" href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a>
+          <a class="nav-item-nav-icon" href="#top"><img src="img/icons/KWEST_Logo_v01.svg" alt="kwest site icon"></a>
           <li class="nav-item">
             <a href="#about" class="nav-link">About me</a></li> 
           <li class="nav-item">
@@ -42,6 +42,7 @@
           <h1>Howdy, <br>I'm Keri West.</h1>
           <img id="img" src="img/Keri-portrait-orrganic.png" alt="Photo of Keri West">
         </div>
+        <div class="line"></div>
         <p>
           A solutions-driven web developer and manager who’s highly
           collaborative and thrives in a communal and progressive atmosphere. I
@@ -86,11 +87,9 @@
         <ul></ul>
       </section>
 
-
-
       <section id="form" class="position">
-        <form class="form" name="leave_message">
-          <h2>Let's chat</h2>
+        <form class="form" name="leave_message" autocomplete="on">
+          <h2>Let's connect</h2>
           <fieldset id="userInput">
             <label id="usersName" for="name">Name</label>
             <input id="name" type="text" name="usersName" required>
@@ -99,7 +98,7 @@
           </fieldset>
           <fieldset id="userMessage">
             <label class="userMessage" for="message">Message</label>
-            <textarea class="message" name="usersMessage" required></textarea>
+            <textarea id="message" name="usersMessage" required></textarea>
           </fieldset>
           <br>
           <button type="submit">Submit</button>
