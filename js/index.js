@@ -1,31 +1,8 @@
 /* script to make sure HTML loads before script 
   (script can be placed anywhre on the page)  */
 document.addEventListener("DOMContentLoaded", () => {
-  /*
-       =======================================  
-       ***********    NAV BAR    *************
-       =======================================
-     */
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
-
-  document.querySelectorAll(".nav-item").forEach((nav) =>
-    nav.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    })
-  );
-
-  /*
-       ========================================== 
-       ************ SKILLS SECTION  *************
-       ==========================================
-     */
+  /*  ///////////// SKILLS SECTION  /////////////  */
   const skills = [
     "HTML",
     "CSS",
@@ -51,39 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
   }
+  
 
-  /*
-        ====================================  
-        ************ PROJECTS  *************
-        ====================================
-     */
-  const githubRequest = new XMLHttpRequest();
-
-  githubRequest.addEventListener("load", function () {
-    if (githubRequest.readyState === 4 && githubRequest.status === 200) {
-      let repositories = JSON.parse(this.response);
-      const projectSection = document.getElementById("projects");
-      const projectList = projectSection.querySelector("ul");
-
-      for (let i = 0; i < repositories.length; i++) {
-        const project = document.createElement("li");
-        const repoLink = document.createElement("a");
-        repoLink.href = repositories[i].html_url;
-        repoLink.textContent = repositories[i].name;
-
-        project.appendChild(repoLink);
-        projectList.appendChild(project);
-      }
-    }
-  });
-  githubRequest.open("GET", "https://api.github.com/users/wessstt/repos");
-  githubRequest.send();
-
-  /*
-       ================================================
-       ************ MESSAGE FORM SECTION **************
-       ================================================
-     */
+  
+  /*   ///////////// MESSAGE FORM SECTION /////////////   */
   /*  Hide message header on load  */
   document.getElementById("messages").style.display = "none";
   /* FORM */
@@ -121,22 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
     removeButton.addEventListener("click", (e) => {
       const entry = e.target.parentNode;
       messageList.removeChild(entry);
-      if (messageList.children.length) {
-        messages.style.display = "block";
+      if (messageList.length === true) {
+        messages.style.display = "";
       } else {
         messages.style.display = "none";
       }
     });
 
-    messageList.appendChild(newMessage);
     newMessage.appendChild(removeButton);
     messageForm.reset();
   });
-  /*
-       =========================================  
-       ************ FOOTER SECTION *************
-       =========================================  
-     */
+
+  /*  ///////////// FOOTER SECTION /////////////   */
   const today = new Date();
   const thisYear = today.getFullYear();
   const footer = document.querySelector("footer");
