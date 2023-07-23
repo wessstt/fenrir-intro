@@ -1,24 +1,48 @@
 /* script to make sure HTML loads before script 
   (script can be placed anywhre on the page)  */
 document.addEventListener("DOMContentLoaded", () => {
+  /*
+       =======================================  
+       ***********    NAV BAR    *************
+       =======================================
+     */
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
 
-  /*  ///////////// SKILLS SECTION  /////////////  */
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-item").forEach((nav) =>
+    nav.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    })
+  );
+
+  /*
+       ========================================== 
+       ************ SKILLS SECTION  *************
+       ==========================================
+     */
   const skills = [
     "HTML",
     "CSS",
-    "JavaScript",
+    "JavaScript [node.js]",
     "Visual Studio Code",
     "GitHub",
     "Adobe Creative Cloud",
     "eCommerce Management",
-    "CMS (BigCommerce/ Webflow/ Wordpress)",
-    "SEO (semrush)",
-    "Google Analytics", 
+    "SEO [semrush]",
+    "Google Analytics",
     "Google Search Console",
     "NetSuite",
-    "Microsoft Office",
-    "Project Management (Jira/ Asana/ Wrike)",
-    "Email Marketing (Klaviyo/Mailchimp)",
+    "Microsoft Office Suite",
+    "Content Management Systems",
+    "BigCommerce | Webflow | Wordpress",
+    "PM [Jira | Asana | Wrike | Trello]",
+    "Email Marketing [Klaviyo | Mailchimp]",
   ];
   const skillsSection = document.getElementById("skills");
   skillsList = skillsSection.querySelector("ul");
@@ -27,10 +51,39 @@ document.addEventListener("DOMContentLoaded", () => {
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
   }
-  
 
-  
-  /*   ///////////// MESSAGE FORM SECTION /////////////   */
+  /*
+        ====================================  
+        ************ PROJECTS  *************
+        ====================================
+     */
+  const githubRequest = new XMLHttpRequest();
+
+  githubRequest.addEventListener("load", function () {
+    if (githubRequest.readyState === 4 && githubRequest.status === 200) {
+      let repositories = JSON.parse(this.response);
+      const projectSection = document.getElementById("projects");
+      const projectList = projectSection.querySelector("ul");
+
+      for (let i = 0; i < repositories.length; i++) {
+        const project = document.createElement("li");
+        const repoLink = document.createElement("a");
+        repoLink.href = repositories[i].html_url;
+        repoLink.textContent = repositories[i].name;
+
+        project.appendChild(repoLink);
+        projectList.appendChild(project);
+      }
+    }
+  });
+  githubRequest.open("GET", "https://api.github.com/users/wessstt/repos");
+  githubRequest.send();
+
+  /*
+       ================================================
+       ************ MESSAGE FORM SECTION **************
+       ================================================
+     */
   /*  Hide message header on load  */
   document.getElementById("messages").style.display = "none";
   /* FORM */
@@ -53,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*  DISPLAYS MESSAGES FROM USERS  */
     const newMessage = document.createElement("li");
-    newMessage.innerHTML = `<a href="mailto:${userInfo[1]}">${userInfo[0]} </a> wrote:<span> ${userInfo[2]}</span>`;
+    newMessage.innerHTML = `<a href="mailto:${userInfo[1]}">${userInfo[0]} wrote:</a> <span> ${userInfo[2]}</span>`;
     document.getElementById("messages").style.display = "";
 
     const messageSection = document.getElementById("messages");
@@ -68,19 +121,22 @@ document.addEventListener("DOMContentLoaded", () => {
     removeButton.addEventListener("click", (e) => {
       const entry = e.target.parentNode;
       messageList.removeChild(entry);
-      if (messageList.length === true) {
-        messages.style.display = "";
+      if (messageList.children.length) {
+        messages.style.display = "block";
       } else {
         messages.style.display = "none";
       }
     });
 
-    newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
+    newMessage.appendChild(removeButton);
     messageForm.reset();
   });
-
-  /*  ///////////// FOOTER SECTION /////////////   */
+  /*
+       =========================================  
+       ************ FOOTER SECTION *************
+       =========================================  
+     */
   const today = new Date();
   const thisYear = today.getFullYear();
   const footer = document.querySelector("footer");
@@ -88,39 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   copyright.innerHTML = `🏳️‍⚧️ safe space 🏳️‍🌈 | &copy; Keri West ${thisYear}`;
   footer.appendChild(copyright);
- 
+
   /*  /// Styling ///   */
   copyright.style.fontSize = "11px";
   copyright.style.wordSpacing = "1px";
   copyright.style.textAlign = "center";
   copyright.style.color = "#298c6f";
   copyright.style.fontWeight = "300";
-
-
-/*  //////////// NAV BAR  ///////////// */
-  const menu = document.querySelector(".menu");
-  const menuItems = document.querySelectorAll(".menuItem");
-  const hamburger = document.querySelector(".hamburger");
-  const closeIcon = document.querySelector("closeIcon");
-  const menuIcon = document.querySelector(".menuIcon")
-
-  function toggleMenu() {
-    if (menu.classList.contains("showMenu")) {
-      menu.classList.remove("showMenu");
-      closeIcon.style.display = "block";
-      hamburger.style.display = "none";
-    } else {
-      menu.classList.add("showMenu");
-      closeIcon.style.display = "none";
-      menuIcon.style.display = "block";
-    }
-  } hamburger.addEventListener("click", toggleMenu);
-  
-  menuItems.forEach(
-    function(menuItem) {
-      menuItem.addEventListener("click", toggleMenu);
-    }
-  )
-
+  copyright.style.marginBottom = "1rem";
 });
-
