@@ -28,10 +28,39 @@ document.addEventListener("DOMContentLoaded", () => {
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
   }
-  
 
-  
-  /*   ///////////// MESSAGE FORM SECTION /////////////   */
+  /*
+        ====================================  
+        ************ PROJECTS  *************
+        ====================================
+     */
+  const githubRequest = new XMLHttpRequest();
+
+  githubRequest.addEventListener("load", function () {
+    if (githubRequest.readyState === 4 && githubRequest.status === 200) {
+      let repositories = JSON.parse(this.response);
+      const projectSection = document.getElementById("projects");
+      const projectList = projectSection.querySelector("ul");
+
+      for (let i = 0; i < repositories.length; i++) {
+        const project = document.createElement("li");
+        const repoLink = document.createElement("a");
+        repoLink.href = repositories[i].html_url;
+        repoLink.textContent = repositories[i].name;
+
+        project.appendChild(repoLink);
+        projectList.appendChild(project);
+      }
+    }
+  });
+  githubRequest.open("GET", "https://api.github.com/users/wessstt/repos");
+  githubRequest.send();
+
+  /*
+       ================================================
+       ************ MESSAGE FORM SECTION **************
+       ================================================
+     */
   /*  Hide message header on load  */
   document.getElementById("messages").style.display = "none";
   /* FORM */

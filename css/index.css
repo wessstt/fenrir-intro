@@ -46,21 +46,12 @@ p {
   width: 70%;
 }
 
-.line {
-  background-color: var(--orange);
-  height: 10px;
-  width: 5rem;
-  margin: 0 15%;
-  border: none;
-  border-radius: 15px;
-}
-
 h1 {
   color: var(--lime);
   font-size: 5.25rem;
   margin: 2% 0 0 15%;
-  line-height: 6rem;
-  letter-spacing: 1.5px;
+  line-height: 6.5rem;
+  letter-spacing: 2px;
   width: 50%;
 }
 
@@ -142,7 +133,6 @@ a.nav-link:active {
 .container {
   display: flex;
   flex-direction: row;
-  align-content: normal;
   align-items: center;
   justify-content: center;
 }
@@ -153,11 +143,19 @@ a.nav-link:active {
   filter: drop-shadow(12px 12px 10px #072b3d);
 }
 .container h1 {
-  max-width: 50%;
+  max-width: 60%;
 }
 #about {
   padding-top: 4.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
+}
+.line {
+  background-color: var(--orange);
+  height: 10px;
+  width: 5rem;
+  margin: 0 15%;
+  border: none;
+  border-radius: 15px;
 }
 
 /*  ======================================
@@ -200,9 +198,9 @@ a.nav-link:active {
 }
 #projects ul {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   flex-flow: wrap;
+  justify-content: space-between;
   margin-inline: 15%;
 }
 #projects li {
@@ -356,13 +354,10 @@ footer {
     padding-right: 3rem;
   }
   .line {
-    background-color: var(--orange);
     height: 8px;
-    width: 5rem;
     margin: 6% 10%;
-    border: none;
-    border-radius: 15px;
   }
+  
   h2 {
     font-size: 2.5rem;
     margin: 1% 10%;
@@ -424,8 +419,6 @@ footer {
     position: absolute;
     cursor: pointer;
     width: 150px;
-    min-width: 50px;
-    margin: 2rem;
   }
 }
 
