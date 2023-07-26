@@ -61,14 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectList = projectSection.querySelector("ul");
   const url = "https://api.github.com/users/wessstt/repos";
 
-  fetch(url)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(githubRepo)
-    .catch((error) =>
-      console.log("Oops, there was an error fetching your request.", error)
-    );
-
   function checkStatus(response) {
     if (response.ok) {
       return Promise.resolve(response);
@@ -92,6 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
       projectList.appendChild(project);
     }
   }
+
+  fetch(url)
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(githubRepo)
+    .catch((error) => {
+      console.log("Oops, there was an error fetching your request.", error);
+    });
 
   /*
        ================================================
