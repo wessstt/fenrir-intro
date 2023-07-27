@@ -369,14 +369,14 @@ footer {
     ****************  MEDIA QUERIES   ****************
     ==================================================   */
 /* When the width is between 300px and 900px - change the appearance */
-@media (max-width: 980px) and (min-width: 320px) {
+@media (max-width: 980px) and (min-width: 460px) {
   h1 {
     font-size: 3rem;
     line-height: 4rem;
     margin-left: 8rem;
     margin-top: 2rem;
   }
-  .container img {
+  img {
     padding-right: 2.5rem;
   }
   .line {
@@ -405,7 +405,7 @@ footer {
     font-size: 12px;
     white-space: nowrap;
     margin-top: 2rem;
-    margin-left: 4rem;
+    margin-left: 3.5rem;
   }
 
   p {
