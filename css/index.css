@@ -1,3 +1,5 @@
+/*css*/
+
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Roboto+Mono:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 :root {
@@ -76,7 +78,30 @@ h3 {
   justify-content: flex-end;
   border: transparent solid 1px;
   list-style: none;
-  cursor: pointer;
+  margin: 3.5rem;
+}
+a.nav-link {
+  color: var(--off-white);
+  display: flex;
+  text-decoration: none;
+  font-size: x-large;
+  padding: 0.5rem;
+}
+.nav-menu {
+  position: fixed;
+  height: 100%;
+  right: -100%;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  opacity: 95%;
+  width: 50%;
+  transition: 0.3s;
+  white-space: nowrap;
+  z-index: 98;
+}
+.nav-menu.active {
+  right: 0;
+  padding: 2rem;
 }
 .nav-icon {
   position: fixed;
@@ -281,10 +306,13 @@ textarea {
   padding-top: 2rem;
 }
 #messages a {
+  display: block;
+  justify-content: space-between;
   color: var(--orange);
   font-size: 16px;
   text-decoration: none;
   margin-left: 5%;
+  text-transform: uppercase;
 }
 #messages span {
   display: block;
@@ -357,7 +385,7 @@ footer {
     height: 8px;
     margin: 6% 10%;
   }
-  
+
   h2 {
     font-size: 2.5rem;
     margin: 1% 10%;
@@ -373,6 +401,7 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+
   .skills {
     display: inline;
     font-size: 15px;
@@ -387,7 +416,12 @@ footer {
     font-size: 1rem;
     padding-bottom: 0.5rem;
   }
-
+  #projects a {
+    display: grid;
+    justify-content: space-evenly;
+    white-space: nowrap;
+    width: fit-content;
+  }
   #form input,
   #form textarea {
     width: 70%;
