@@ -167,7 +167,7 @@ a.nav-link:active {
   filter: drop-shadow(12px 12px 10px #072b3d);
 }
 .container h1 {
-  max-width: 60%;
+  max-width: 50%;
 }
 #about {
   padding-top: 4.5rem;
