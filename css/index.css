@@ -22,6 +22,7 @@
 body {
   font-family: "Roboto Mono", monospace;
   width: 100%;
+  overflow-x: hidden;
 }
 
 h1,
@@ -368,7 +369,7 @@ footer {
 /*  ================================================== 
     ****************  MEDIA QUERIES   ****************
     ==================================================   */
-/* When the width is between 300px and 900px - change the appearance */
+/* When the width is between 360px and 980px - change the appearance */
 @media (max-width: 980px) and (min-width: 360px) {
   .hamburger {
     right: 1rem;
