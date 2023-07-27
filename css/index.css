@@ -17,11 +17,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Roboto Mono", monospace;
-  max-width: 100%;
+  width: 100%;
 }
 
 h1,
@@ -374,13 +375,14 @@ footer {
     right: 1rem;
   }
   h1 {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     line-height: 3rem;
-    margin-left: 8rem;
+    margin-left: 3rem;
     margin-top: 2rem;
   }
   .container img {
-    padding-right: 2.5rem;
+    margin-right: 1.5rem;
+    margin-left: 2rem;
   }
   .line {
     height: 8px;
