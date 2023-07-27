@@ -60,6 +60,7 @@ h2 {
   letter-spacing: 1.5px;
   margin: 2% 15%;
   padding-top: 4rem;
+  padding-bottom: 1rem;
 }
 
 h3 {
@@ -199,7 +200,8 @@ a.nav-link:active {
   list-style-type: none;
   text-align: left;
   margin-left: 15%;
-  padding-bottom: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
 }
 .skills li::before {
   content: "◦";
@@ -251,7 +253,8 @@ a.nav-link:active {
     ================================  */
 form {
   border: none;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   color: var(--secondary-color);
 }
 #form label {
@@ -259,8 +262,8 @@ form {
   font-weight: 300;
   display: grid;
   font-size: 13px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 7px;
   margin-inline: 15%;
 }
 #form input,
@@ -388,7 +391,7 @@ footer {
     margin: 6% 10%;
   }
 
-  h2 {
+  h2, h3 {
     font-size: 2.25rem;
     margin: 1% 10%;
   }
@@ -400,16 +403,13 @@ footer {
   }
 
   h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
   }
 
   .skills {
-    display: inline;
-    font-size: 12px;
-    white-space: nowrap;
-    margin-top: 2rem;
-    margin-left: 3.5rem;
+    display: block;
+    font-size: 15px;
+    margin: 1% 12%;
   }
 
   p {
@@ -466,9 +466,6 @@ footer {
     position: absolute;
   }
   .skills {
-    display: block;
-    font-size: 15px;
     white-space: nowrap;
-    margin-top: 2rem;
   }
 }
