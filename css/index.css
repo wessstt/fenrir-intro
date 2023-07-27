@@ -402,10 +402,10 @@ footer {
 
   .skills {
     display: inline;
-    font-size: 13px;
+    font-size: 12px;
     white-space: nowrap;
     margin-top: 2rem;
-    margin-left: inherit;
+    margin-left: 4rem;
   }
 
   p {
