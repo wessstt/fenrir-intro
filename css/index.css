@@ -377,7 +377,7 @@ footer {
     margin-top: 2rem;
   }
   .container img {
-    padding-right: 3rem;
+    padding-right: 2.5rem;
   }
   .line {
     height: 8px;
@@ -402,9 +402,10 @@ footer {
 
   .skills {
     display: inline;
-    font-size: 15px;
+    font-size: 13px;
     white-space: nowrap;
     margin-top: 2rem;
+    margin-left: inherit;
   }
 
   p {
@@ -416,6 +417,7 @@ footer {
   }
   #projects a {
     display: grid;
+    grid-template-columns: auto;
     justify-content: space-evenly;
     white-space: nowrap;
     width: fit-content;
