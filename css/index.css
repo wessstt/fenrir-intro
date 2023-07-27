@@ -376,21 +376,10 @@ footer {
   .hamburger {
     right: 1rem;
   }
-  h1 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    margin-left: 3rem;
-    margin-top: 2rem;
-  }
-  .container img {
-    margin-right: 1.5rem;
-    margin-left: 2rem;
-  }
   .line {
     height: 8px;
     margin: 6% 10%;
   }
-
   h2, h3 {
     font-size: 2.25rem;
     margin: 1% 10%;
@@ -467,5 +456,12 @@ footer {
   }
   .skills {
     white-space: nowrap;
+  }
+  .container {
+    margin: 5% 10%;
+  }
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
   }
 }
