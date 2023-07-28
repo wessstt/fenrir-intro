@@ -59,8 +59,8 @@ h2 {
   font-size: 3rem;
   letter-spacing: 1.5px;
   margin: 2% 15%;
-  padding-top: 4rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: .75rem;
 }
 
 h3 {
@@ -201,7 +201,7 @@ a.nav-link:active {
   text-align: left;
   margin-left: 15%;
   padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 5rem;
 }
 .skills li::before {
   content: "◦";
@@ -399,6 +399,7 @@ footer {
     display: block;
     font-size: 15px;
     margin: 1% 12%;
+    padding-bottom: .5rem;
   }
 
   p {
